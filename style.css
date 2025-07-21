@@ -1,0 +1,81 @@
+@charset "utf-8";
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  background-image: radial-gradient(#b5b5b5 5%, transparent 0), radial-gradient(#b5b5b5 5%, transparent 0);
+  background-position: 0 0, 15px 15px;
+  background-repeat: repeat;
+  background-size: 30px 30px;
+}
+
+.ellipse {
+  border: 2px solid rgb(119, 119, 119);
+  border-radius: 50% / 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+}
+.ellipse1 {
+  background-color: lightblue;
+  width: 160px;
+  height: 120px;
+  position: relative;
+  z-index: 1;
+}
+
+.yellow-ellipse {
+  border: 2px solid rgb(119, 119, 119);
+  border-radius: 50% / 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+  background-color: rgb(240, 240, 174);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;}
+.ellipse2 {
+  position: absolute;
+  right: 100%;
+  margin-right: 50px;
+  width: 100px;
+  height: 75px;
+   z-index: 1;
+}
+.children {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-left: 80px;
+}
+
+.ellipse3, .ellipse4, .ellipse5 {
+  width: 128px;
+  height: 96px;
+   z-index: 1;
+}
+
+.yellow-ellipse:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.5);
+}
+
+svg.lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0; /* 맨 아래 */
+}
+
