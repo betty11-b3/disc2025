@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <div class="wrapper" onclick="toggleSubConcepts(this)">
+        <div class ="ellipse ellipse1">적분</div>
+        <div class ="sub-ellipse top"  data-img="face.jpg">surface</div>
+        <div class ="sub-ellipse left" data-img="volume.jpg">volume</div>
+        <div class ="sub-ellipse right" data-img="line.jpg">line</div>
+    </div>
+    <div class="wrapper" onclick="toggleSubConcepts(this)">
+        <div class ="ellipse ellipse2">∇델</div> 
+        <div class ="sub-ellipse top" data-img="div.jpg">Divergence</div>
+        <div class ="sub-ellipse left" data-img="rot.jpg">Rotation</div>
+        <div class ="sub-ellipse bottom" data-img="laplace.jpg">Laplacian</div>
+        <div class ="sub-ellipse right" data-img="grad.jpg">Gradient</div>
+    </div>
+
+    <div class="wrapper" onclick="toggleSubConcepts(this)">
+        <div class ="ellipse ellipse3">좌표계</div> 
+        <div class ="sub-ellipse top" data-img="car.jpg">Cartesian</div>
+        <div class ="sub-ellipse left" data-img="spher.jpg">Spherical</div>
+        <div class ="sub-ellipse right" data-img="cylin.jpg">Cylindrical</div>
+        <div class ="sub-ellipse bottom" data-img="vec.jpg">벡터 개념</div>
+    </div>
+    <div id="concept-viewer">
+    <img id="concept-image" />
+    </div>
+    <script>
+  document.querySelectorAll('.ellipse').forEach(el => {
+    el.addEventListener('click', function () {
+      this.parentElement.classList.toggle('show');
+    });
+  });
+  document.querySelectorAll('.sub-ellipse').forEach(el => {
+    el.addEventListener('click', function (e) {
+      e.stopPropagation(); // 부모 wrapper 클릭 방지
+      const imgSrc = this.dataset.img;
+      const viewer = document.getElementById('concept-viewer');
+      const imgTag = document.getElementById('concept-image');
+
+      imgTag.src = imgSrc;
+      viewer.style.display = 'flex';
+    });
+  });
+  document.getElementById('concept-viewer').addEventListener('click', function () {
+    this.style.display = 'none';
+  });
+</script>
+</body>
+</html>
