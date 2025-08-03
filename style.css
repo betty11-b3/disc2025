@@ -12,6 +12,22 @@ body {
   background-size: 30px 30px;
 }
 
+.mindmap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+svg.lines {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+}
+
 .ellipse {
   border: 2px solid rgb(119, 119, 119);
   border-radius: 50% / 50%;
@@ -27,6 +43,7 @@ body {
   height: 120px;
   position: relative;
   z-index: 1;
+  transform: translate(0%, 0%);
 }
 
 .yellow-ellipse {
@@ -38,7 +55,9 @@ body {
   text-align: center;
   font-weight: bold;
   background-color: rgb(240, 240, 174);
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;}
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+
 .ellipse2 {
   position: absolute;
   right: 100%;
@@ -61,7 +80,6 @@ body {
 .ellipse3, .ellipse4, .ellipse5 {
   width: 128px;
   height: 96px;
-   z-index: 1;
 }
 
 .yellow-ellipse:hover {
