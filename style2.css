@@ -1,0 +1,96 @@
+@charset "utf-8";
+body {
+  margin: 0;
+  height: 100vh;
+  background: #ffffff;
+  background-image: radial-gradient(#b5b5b5 5%, transparent 0),
+                    radial-gradient(#b5b5b5 5%, transparent 0);
+  background-position: 0 0, 15px 15px;
+  background-repeat: repeat;
+  background-size: 30px 30px;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  position: relative;
+  width: 2000px;
+  height: 1800px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 130px;
+  height: 90px;
+  background:  rgb(240, 240, 174);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1.7px solid rgb(119, 119, 119);
+  text-align: center;
+}
+
+.node {
+  border: 1.7px solid rgb(119, 119, 119);
+  position: absolute;
+  background: #bde8ff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  font-size: 15px;
+}
+.node:hover {
+     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+.node2 { width: 90px; height: 65px; top: 50%; left: 20%; }
+.node3 { width: 90px; height: 65px;top: 60%; left: 55%; }
+.node4 { width: 90px; height: 65px; top: 60%; left: 40%; }
+.node5 { width: 80px; height: 55px; top: 40%; left: 32%; }
+.node6 { width: 90px; height: 65px;top: 44%; left: 65%; }
+.node7 { width: 80px; height: 55px; top: 40%; left: 44%; }
+
+.sub-node {
+  position: absolute;
+  width: 65px;
+  height: 50px;
+  background: #b2e4c5bc;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #555;
+  font-size: 11px;
+  opacity: 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+}
+
+.image-popup {
+  position: absolute;
+  display: none;
+  border: 2px solid #666;
+  background: white;
+  padding: 5px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+  z-index: 100;
+}
+
+.image-popup img {
+  max-width: 250px;
+  max-height: 200px;
+  display: block;
+}
+
+
