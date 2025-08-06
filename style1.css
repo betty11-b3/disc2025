@@ -13,7 +13,7 @@ body {
 }
 
 .ellipse {
-  border: 2px solid rgb(119, 119, 119);
+  border: 1.7px solid rgb(119, 119, 119);
   border-radius: 50% / 50%;
   display: flex;
   justify-content: center;
@@ -21,23 +21,20 @@ body {
   text-align: center;
   font-size: 20px;
   background-color: rgb(240, 240, 174);
-  width: 140px;
-  height: 105px;
+  width: 109px;
+  height: 80px;
   z-index: 1;
+  position: relative;
 }
-.ellipse:hover {
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease;
-    transform: scale(1.01);
-}
+
 .ellipse1, .ellipse2, .ellipse3 {
   position: static;
 }
 
 .wrapper {
   position: relative;
-  width: auto;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   margin: auto;
   display: flex;
   justify-content: center;  /* 가운데 정렬 */
@@ -46,19 +43,18 @@ body {
 }
 
 .sub-ellipse {
-  width: 100px;
-  height: 70px;
+  width: 84px;
+  height: 60px;
   background-color: #bde8ff;
   border-radius: 50%;
   border: 1.5px solid #666;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
   position: absolute;
-  opacity: 0;
-  visibility: hidden;
+  opacity: 1;
   transition: all 0.1s ease;
+  z-index: 1;
 }
 .sub-ellipse:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
@@ -69,19 +65,19 @@ body {
 }
 
 .sub-ellipse.top {
-  top: -20%;
-  left: 14%;
+  top: -25%;
+  left: 27%;
   margin-bottom: 10px;
 }
 
 .sub-ellipse.left {
-  top: 30%;
-  right: 110%;
+  top: 27%;
+  right: 97%;
 }
 
 .sub-ellipse.right {
-  top: 30%;
-  right: -80%;
+  top: 53%;
+  right: -30%;
 }
 .sub-ellipse.bottom {
   bottom: -20%;
@@ -106,6 +102,37 @@ body {
   box-shadow: 0 0 20px rgba(0,0,0,0.7);
   background-color: white; /* 혹시 투명 PNG여도 흰 배경 */
 }
+svg#lines-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* 선은 클릭 방해 안 하도록 */
+  z-index: 0;
+}
+#home-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  height: 50px;
+  background-color: #ffde7a; /* 노란색 계열 */
+  border-radius: 8px;
+  cursor: pointer;
+  border: 10px;
+  box-shadow: 0 3px 5px rgba(83, 83, 83, 0.2);
+  transition: 0.2s;
+}
+
+#home-btn:hover {
+  background-color: #f1c232; /* hover 시 진한 색 */
+}
+
+
+
+
+
 
 
 
