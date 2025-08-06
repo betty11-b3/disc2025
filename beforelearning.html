@@ -5,52 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style1.css">
+    <script src="script2.js" defer></script>
 </head>
 <body>
     <div class="wrapper" onclick="toggleSubConcepts(this)">
-        <div class ="ellipse ellipse1">적분</div>
-        <div class ="sub-ellipse top"  data-img="face.jpg">surface</div>
-        <div class ="sub-ellipse left" data-img="volume.jpg">volume</div>
-        <div class ="sub-ellipse right" data-img="line.jpg">line</div>
+        <div class ="ellipse ellipse1" id="center1">적분</div>
+        <div class ="sub-ellipse top"  data-img="face.jpg" id="n1">surface</div>
+        <div class ="sub-ellipse left" data-img="volume.jpg" id="n2">volume</div>
+        <div class ="sub-ellipse right" data-img="line.jpg" id="n3">line</div>
     </div>
     <div class="wrapper" onclick="toggleSubConcepts(this)">
-        <div class ="ellipse ellipse2">∇델</div> 
-        <div class ="sub-ellipse top" data-img="div.jpg">Divergence</div>
-        <div class ="sub-ellipse left" data-img="rot.jpg">Rotation</div>
-        <div class ="sub-ellipse bottom" data-img="laplace.jpg">Laplacian</div>
-        <div class ="sub-ellipse right" data-img="grad.jpg">Gradient</div>
+        <div class ="ellipse ellipse2" id="center2">∇델</div> 
+        <div class ="sub-ellipse top" data-img="div.jpg" id="n4">Divergence</div>
+        <div class ="sub-ellipse left" data-img="rot.jpg" id="n5">Rotation</div>
+        <div class ="sub-ellipse bottom" data-img="laplace.jpg" id="n6">Laplacian</div>
+        <div class ="sub-ellipse right" data-img="grad.jpg" id="n7">Gradient</div>
     </div>
 
     <div class="wrapper" onclick="toggleSubConcepts(this)">
-        <div class ="ellipse ellipse3">좌표계</div> 
-        <div class ="sub-ellipse top" data-img="car.jpg">Cartesian</div>
-        <div class ="sub-ellipse left" data-img="spher.jpg">Spherical</div>
-        <div class ="sub-ellipse right" data-img="cylin.jpg">Cylindrical</div>
-        <div class ="sub-ellipse bottom" data-img="vec.jpg">벡터 개념</div>
+        <div class ="ellipse ellipse3"id="center3">좌표계</div> 
+        <div class ="sub-ellipse top" data-img="car.jpg" id="n8">Cartesian</div>
+        <div class ="sub-ellipse left" data-img="spher.jpg" id="n9">Spherical</div>
+        <div class ="sub-ellipse right" data-img="cylin.jpg" id="n10">Cylindrical</div>
+        <div class ="sub-ellipse bottom" data-img="vec.jpg" id="n11">벡터 개념</div>
     </div>
     <div id="concept-viewer">
     <img id="concept-image" />
     </div>
-    <script>
-  document.querySelectorAll('.ellipse').forEach(el => {
-    el.addEventListener('click', function () {
-      this.parentElement.classList.toggle('show');
-    });
-  });
-  document.querySelectorAll('.sub-ellipse').forEach(el => {
-    el.addEventListener('click', function (e) {
-      e.stopPropagation(); // 부모 wrapper 클릭 방지
-      const imgSrc = this.dataset.img;
-      const viewer = document.getElementById('concept-viewer');
-      const imgTag = document.getElementById('concept-image');
-
-      imgTag.src = imgSrc;
-      viewer.style.display = 'flex';
-    });
-  });
-  document.getElementById('concept-viewer').addEventListener('click', function () {
-    this.style.display = 'none';
-  });
-</script>
+    <button id="home-btn">🏠</button>
+    <svg id="lines-svg" ></svg>
 </body>
 </html>
