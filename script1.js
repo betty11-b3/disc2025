@@ -142,7 +142,5 @@ window.onload = () => {
   // center1에서 모든 노드로 연결
   connectLines("center1", ["n1","n2","n3","n4","n5","n6"]);
 };
-document.getElementById('home-btn').addEventListener('click', () => {
-  window.location.href = "index.html"; // 홈 파일 경로
-});
+
 
