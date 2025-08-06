@@ -61,4 +61,6 @@ document.addEventListener('click', function () {
   const viewer = document.getElementById('concept-viewer');
   viewer.style.display = 'none';
 });
-
+document.getElementById('home-btn').addEventListener('click', () => {
+  window.location.href = "index.html"; // 홈 파일 경로
+});
