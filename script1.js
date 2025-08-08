@@ -221,3 +221,6 @@ function createSubNodesAuto() {
 
   createSubNodesAuto();
 });
+document.getElementById('home-btn').addEventListener('click', () => {
+  window.location.href = "index.html"; // 홈 파일 경로
+});
