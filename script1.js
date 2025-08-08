@@ -195,3 +195,29 @@ function createSubNodesAuto() {
     subMap.set(node, created);
   });
 }
+
+
+                      
+  // -----------------------------
+  // 5) 선 연결
+  // -----------------------------
+  connectLines('center1', ['n1', 'n2', 'n3', 'n4', 'n5', 'n6']);
+
+  // -----------------------------
+  // 6) 팬줌 초기화 및 확대 + 화면 중앙 정렬
+  // -----------------------------
+  const panzoomInstance = panzoom(canvas, {
+    bounds: true,
+    autocenter: true,
+    zoomDoubleClickSpeed: 1,
+    maxZoom: 3,
+    minZoom: 0.5
+  });
+
+  // 초기 확대 (브라우저 중심 기준 확대)
+  const centerX = window.innerWidth / 2;
+  const centerY = window.innerHeight / 2;
+  panzoomInstance.zoomAbs(centerX, centerY, 1.5);
+
+  createSubNodesAuto();
+});
