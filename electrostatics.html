@@ -1,39 +1,100 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-    <meta charset="UTF-8" />
-    <title>Electrostatics</title>
-    <link rel="stylesheet" href="style2.css">
-    <script src="script1.js" defer></script>
+  <meta charset="UTF-8" />
+  <title>Electrostatics</title>
+  <link rel="stylesheet" href="style2.css">
+   <script
+    src="dist/panzoom.js" query="#canvas"
+    name="pz"
+    pz-bounds="true"
+    pz-autocenter="true"></script>
+  <script src="script1.js" defer></script>
 </head>
 <body>
-    <svg id="lines-svg" style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:0;"></svg>
+  <div id="viewport">
+    <div id="canvas">
+        <svg id="lines-svg" style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:0;"></svg>
+        <div class="container">
+        <div class="center" id="center1">Electric Field <br> (전기장)</div>
 
-    <div class="container">
-        <div class="center" id="center1">Electric Field <br> (전기장) </div>
+        <div class="node image-node node3" id="n1"
+             data-img="gauss.png"
+             data-offset-x="-200" data-offset-y="1075"
+             data-img-width="1800px" data-img-height="1200px">
+             가우스<br>법칙</div>
 
-        <div class="node image-node node3" id="n1" data-img="img/gauss.png">가우스<br>법칙</div>
-        <div class="node image-node node4" id="n2" data-img="img/coulomb.png">쿨롱 법칙</div>
-        <div class="node image-node node5" id="n3" data-img="img/charge.png">전하</div>
-        <div class="node image-node node7" id="n4" data-img="img/D.png"> flux <br> density</div>
+        <div class="node image-node node4" id="n2"
+             data-img="coulomb.png"
+             data-offset-x="-700" data-offset-y="1280"
+             data-img-width="600px" data-img-height="350px">
+             쿨롱 법칙</div>
 
-        <div class="node expand-node node2" id="n5" data-subnodes='[
-            {"text":"에너지","img":"img/potential_diff.png","angle":0,"radius":90},
-            {"text":"Capacitor","img":"img/capacitance.png","angle":100,"radius":150},
-            {"text":"Laplace & poisson","img":"img/capacitance.png","angle":-130,"radius":170}
-        ]'>전위</div>
+        <div class="node image-node node5" id="n3"
+             data-img="charge.png"
+             data-offset-x="-745" data-offset-y="-600"
+             data-img-width="850px" data-img-height="700px">
+             전하</div>
 
-       <div class="node expand-node node6" id="n6" data-subnodes='[
-            {"text":"도체","img":"img/conduct.png","angle":-10,"radius":130},
-            {"text":"경계 조건","img":"img/bound.png","angle":-100,"radius":150},
-            {"text":"유전체","img":"img/dielec.png","angle":100,"radius":100}
-        ]'>물질공간</div>
-        <div class="image-popup" id="popup">
-            <img id="popup-img" src="" alt="">
+        <div class="node image-node node7" id="n4"
+             data-img="density.png"
+             data-offset-x="-70" data-offset-y="-290"
+             data-img-width="650px" data-img-height="480px">
+             flux <br> density</div>
+        <div class="node image-node node2" id="n5"
+            data-img="poten.png"
+            data-offset-x="-850" data-offset-y="780"
+            data-img-width="1050px" data-img-height="880px">
+            전위
         </div>
+        <div class="sub-node image-node sub2" id="sn2"
+             data-img="cap.png"
+             data-offset-x="-1800" data-offset-y="740"
+             data-img-width="1000px" data-img-height="1280px">
+             Capacitor
+        </div>
+
+        <div class="sub-node image-node sub3" id="sn3"
+             data-img="pois.png"
+             data-offset-x="-550" data-offset-y="100"
+             data-img-width="700px" data-img-height="550px">
+             Laplace<br>& Poisson
+        </div>
+        <!-- 메인 노드 -->
+        <div class="node image-node node6" id="n6" data-img="met.png"
+             data-offset-x="950" data-offset-y="100"
+             data-img-width="500px" data-img-height="650px">
+             물질공간   
+        </div>
+
+<!-- 서브노드: 도체 -->
+        <div class="sub-node image-node sub4" id="sn4"
+             data-img="conduct.png"
+             data-offset-x="50" data-offset-y="-50"
+             data-img-width="650px" data-img-height="450px">
+             도체
+        </div>
+
+<!-- 서브노드: 경계 조건 -->
+        <div class="sub-node image-node sub5" id="sn5"
+             data-img="bound.png"
+             data-offset-x="50" data-offset-y="-50"
+             data-img-width="650px" data-img-height="450px">
+            경계<br>조건
+        </div>
+
+<!-- 서브노드: 유전체 -->
+        <div class="sub-node image-node sub6" id="sn6"
+             data-img="dielec.png"
+             data-offset-x="50" data-offset-y="-50"
+             data-img-width="650px" data-img-height="450px">
+             유전체
+        </div>
+
     </div>
-    <button id="home-btn">🏠</button>
+      
+    </div>
+  </div>
+
 </body>
 </html>
-
-
